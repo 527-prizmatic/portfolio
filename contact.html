@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style> body { background-color: #000; } </style>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="js/sidebar-funcs.js"></script>
+		<script src="js/gallery-handler.js"></script>
+
+		<script>
+			load_gallery([populate_img_fields_random]);
+		</script>
+
+		<link rel="icon" href="icon.ico">
+		<link rel="stylesheet" href="style/layout.css">
+		<link rel="stylesheet" href="style/text-format.css">
+		<title>Prizma's Portfolio</title>
+	</head>
+
+	<body>
+		<!-- Base content -->
+		<div class="base-wrapper" id="main-wrapper">
+			<div id="content-area">
+				<div id="content-wrapper">
+					<div class="flex-col" style="height: 36%; width: 84%; padding-bottom: 5%;">
+						<h1 class="align-c">Contact & useful links</h1>
+						<div class="flex-row contact-content-row">
+							<a class="flex-col simple-content-field contact-card hover-brighten" href="mailto:jsebtc@gmail.com" title="jsebtc@gmail.com">
+								<img class="contact-icon" src="media/logos/email-color.png">
+								<h2 class="align-c">Send me an email!</h2>
+							</a>
+							<a class="flex-col simple-content-field contact-card hover-brighten" href="https://discordapp.com/users/418500799333793812" title="@prizmagistus6944">
+								<img class="contact-icon" src="media/logos/discord-color.png">
+								<h2 class="align-c">Add me on Discord!</h2>
+							</a>
+						</div>
+						<div class="flex-row contact-content-row">
+							<a class="flex-col simple-content-field contact-card hover-brighten" href="https://cara.app/prizmagistus" title="@prizmagistus">
+								<img class="contact-icon" src="media/logos/cara-color.png">
+								<h2 class="align-c">Check my Cara page!</h2>
+							</a>
+							<a class="flex-col simple-content-field contact-card hover-brighten" href="https://x.com/aperian_" title="@aperian_">
+								<img class="contact-icon" src="media/logos/twitter-color.png">
+								<h2 class="align-c">Check my music project's Twitter!</h2>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Sidebar -->
+		<div class="base-wrapper" id="sidebar-wrapper">
+			<iframe id="iframe-sidebar" style="height:100%; width:100%; border:none; margin: 0; padding: 0;" src="sidebar.html" onload="setButtonSel('contact');"></iframe>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h2 { transition: .25s; }
+
+.sidebar-button-wrapper {
+  height: 10%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Regular buttons - idle (clear) */
+.sidebar-button {
+  height: 100%;
+  width: 0;
+  white-space: nowrap;
+  transition: 0.5s;
+}
+
+/* Currently selected tab button - idle (thin trim on left side) */
+.button-selected {
+  width: 10px;
+  background-color: #DDF;
+}
+.sidebar-button-wrapper:has(.button-selected) > h2 { font-size: 36px; }
+
+/* Regular buttons - hovered on (white zone slides in) */
+.sidebar-button-wrapper:hover > .sidebar-button:not(.button-selected) {
+  width: 100%;
+  background-color: #88A;
+}
+
+/* Regular buttons - hovered on (text enlarges) */
+.sidebar-button-wrapper:hover:not(:has(.button-selected)) > h2 { font-size: 36px; }
+
+/* Regular buttons - a different regular button is being hovered on (text shrinks) */
+/* FIXME Make this not happen when hovering .button-selected */
+body:has(.sidebar-button-wrapper:hover) > .sidebar-button-wrapper:not(:hover) > h2 {
+  font-size: 24px;
+  color: #334;
+}
+
+/* Currently selected tab button - a regular button is being hovered on (trim disappears) */
+body:has(.sidebar-button-wrapper:hover) > .sidebar-button-wrapper:not(:has(.button-selected):hover) > .button-selected {
+  width: 0%;
+  background-color: #333;
+}
+
+.sidebar-flex-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+.sidebar-bottom-padding {
+  text-size: 12px;
+  height: calc(25vh - 60px - 2.75em);
+}
+.sidebar-social-icon > img { width: 40px; }
+
+.hover-brighten {
+	filter: brightness(1);
+	transition: 0.25s;
+}
+
+.hover-brighten:hover {
+	filter: brightness(2);
+}

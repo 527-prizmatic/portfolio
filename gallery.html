@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style> body { background-color: #000; } </style>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="js/sidebar-funcs.js"></script>
+		<script src="js/gallery-handler.js"></script>
+
+		<script>
+			load_gallery([populate_gallery, clear_used_list, stretch_gallery]);
+		</script>
+
+		<link rel="icon" href="icon.ico">
+		<link rel="stylesheet" href="style/layout.css">
+		<link rel="stylesheet" href="style/text-format.css">
+		<title>Prizma's Portfolio</title>
+	</head>
+
+	<body onresize="stretch_gallery();" onwheel="stretch_gallery();">
+		<!-- Base content -->
+		<div class="base-wrapper" id="main-wrapper">
+			<div id="content-area" style="position: relative;">
+				<div id="content-wrapper">
+
+						<div class="flex-col">
+							<h1 class="align-c">Prizma's Gallery</h1>
+							<div class="flex-row" id="gallery-wrapper">
+								<div class="flex-col" id="gallery-line-1"></div>
+								<div class="h-sep"></div>
+								<div class="flex-col" id="gallery-line-2"></div>
+							</div>
+							<p class="text-area align-c">
+								Click on a piece to see an enlarged version.<br>
+								Those examples have been downscaled. Completed commissions will be two to three times as large.
+							</p>
+						</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="gallery-overlay" class="flex-row" style="justify-content: space-around; visibility: hidden;">
+			<img src="media/icon-prev.png" class="gallery-nav-icon hover-brighten" onclick="gallery_overlay_change_prev();" title="Previous image (left arrow key)"> <!-- Replace with actual, functional button -->
+			<div class="flex-col" style="height: 100%; width: 75%; ">
+				<div style="height: 75%; width: 100%;">
+					<img id="gallery-overlay-img" onclick="gallery_overlay_fade_out();">
+				</div>
+				<h3 id="gallery-nav-back" class="align-c" onclick="gallery_overlay_fade_out();" title="(Esc key)">Back to the gallery</h3> <!-- Replace with actual, functional button -->
+			</div>
+			<img src="media/icon-next.png" class="gallery-nav-icon hover-brighten" onclick="gallery_overlay_change_next();" title="Next image (right arrow key)"> <!-- Replace with actual, functional button -->
+
+			<script>
+				keyPressed = false;
+				document.body.addEventListener("keydown", (e) => {
+					if (!keyPressed) {
+						if (e.key == "ArrowLeft") gallery_overlay_change_prev();
+						if (e.key == "ArrowRight") gallery_overlay_change_next();
+						if (e.key == "Escape") gallery_overlay_fade_out();
+					}
+					keyPressed = true;
+				});
+
+				document.body.addEventListener("keyup", (e) => { keyPressed = false; });
+			</script>
+		</div>
+
+		<!-- Sidebar -->
+		<div class="base-wrapper" id="sidebar-wrapper">
+			<iframe id="iframe-sidebar" style="height:100%; width:100%; border:none; margin: 0; padding: 0;" src="sidebar.html" onload="setButtonSel('gallery');"></iframe>
+		</div>
+	</body>
+</html>

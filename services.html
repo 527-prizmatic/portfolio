@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style> body { background-color: #000; } </style>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="js/sidebar-funcs.js"></script>
+		<script src="js/gallery-handler.js"></script>
+		<script src="js/services-handler.js"></script>
+
+		<link rel="icon" href="icon.ico">
+		<link rel="stylesheet" href="style/layout.css">
+		<link rel="stylesheet" href="style/text-format.css">
+		<title>Prizma's Portfolio</title>
+	</head>
+
+	<body onload="services_init();">
+		<!-- Base content -->
+		<div class="base-wrapper" id="main-wrapper">
+			<div id="content-area">
+				<div id="content-wrapper" style="align-items: flex-start;">
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Sidebar -->
+		<div class="base-wrapper" id="sidebar-wrapper">
+			<iframe id="iframe-sidebar" style="height:100%; width:100%; border:none; margin: 0; padding: 0;" src="sidebar.html" onload="setButtonSel('services');"></iframe>
+		</div>
+	</body>
+</html>

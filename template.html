@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style> body { background-color: #000; } </style>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="js/sidebar-funcs.js"></script>
+		<script src="js/gallery-handler.js"></script>
+
+		<script>
+			load_gallery([populate_img_fields_random]);
+		</script>
+
+		<link rel="icon" href="icon.ico">
+		<link rel="stylesheet" href="style/layout.css">
+		<link rel="stylesheet" href="style/text-format.css">
+		<title>Prizma's Portfolio</title>
+	</head>
+
+	<body>
+		<!-- Base content -->
+		<div class="base-wrapper" id="main-wrapper">
+			<div id="content-area">
+				<div id="content-wrapper">
+					<h1 class="align-c">Header 1</h1><br>
+					<h2>Header 2</h2><br>
+					<h3>Header 3</h3><br>
+					<h4>Header 4</h4><br>
+					<div class="text-area">
+						This is plain text with lots of lines and stuff being said, oh look, <b>bold text</b>, and here, <em>italics</em>, and here, <u>an underline</u>...
+						This is plain text with lots of lines and stuff being said, oh look, <b>bold text</b>, and here, <em>italics</em>, and here, <u>an underline</u>...
+						This is plain text with lots of lines and stuff being said, oh look, <b>bold text</b>, and here, <em>italics</em>, and here, <u>an underline</u>...
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Sidebar -->
+		<div class="base-wrapper" id="sidebar-wrapper">
+			<iframe id="iframe-sidebar" style="height:100%; width:100%; border:none; margin: 0; padding: 0;" src="sidebar.html" onload="setButtonSel('about');"></iframe>
+		</div>
+	</body>
+</html>

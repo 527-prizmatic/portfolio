@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style> body { background-color: #000; } </style>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="js/sidebar-funcs.js"></script>
+		<script src="js/gallery-handler.js"></script>
+
+		<script>
+			load_gallery([populate_img_fields_random]);
+		</script>
+
+		<link rel="icon" href="icon.ico">
+		<link rel="stylesheet" href="style/layout.css">
+		<link rel="stylesheet" href="style/text-format.css">
+		<title>Prizma's Portfolio</title>
+	</head>
+
+	<body>
+		<!-- Base content -->
+		<div class="base-wrapper" id="main-wrapper">
+			<div id="content-area">
+				<div id="content-wrapper">
+					<div class="flex-col" style="width: 92%; height: 80%;">
+						<div class="flex-row about-content-row">
+							<div class="simple-content-field align-r">
+								<h2>Meet the Artist!</h2>
+								<p class="text-area">
+									Prizmagistus (or Prizma for shorts) is a self-taught French artist with more than five years of experience in the field of illustration and character art,
+									as well as a musician, conlanger, worldbuilder and game development student.
+								</p>
+								<p class="text-area">
+									I initially began my creative journey with video game fan arts (most notably <em>Minecraft</em> and <em>Undertale</em>), and quickly developed my
+									own cast of original characters to practice various forms of art. Now I am putting my expertise to your service to bring your own creations to life!
+								</p>
+							</div>
+							<!-- Image field, generated randomly using JS for importing a random gallery picture-->
+							<div class="simple-content-field"><img class="img-field-random"></div>
+						</div>
+						<div class="h-sep"></div>
+						<div class="flex-row about-content-row">
+							<!-- Image field, generated randomly using JS for importing a random gallery picture-->
+							<div class="simple-content-field"><img class="img-field-random"></div>
+							<div class="simple-content-field align-l">
+								<p class="text-area">
+									By exploring my <a href="gallery.html"><b>Gallery</b></a> you can get a first idea of my work method as well as my style.
+									I work a lot with contrasting colors, sharp geometrical shapes and thick, powerful lines, all while keeping a largely realistic approach to shapes and anatomy,
+									striving for a somewhat techy, futuristic aesthetic. Of course this does not mean I limit myself to futuristic works - I dabble a lot in fantasy and retro-futurism as well.
+								</p>
+								<p class="text-area">
+									I love experimenting with new techniques and trying to integrate them in my tool set, and hope to get to explore entirely new domains through commissions!
+								</p>
+								<p class="text-area" style="font-size: 14px;">
+									(My apologies in advance to phone users, this mess of a website is only really optimized for desktop as of right now,
+									still working on making it work on phone as well)
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Sidebar -->
+		<div class="base-wrapper" id="sidebar-wrapper">
+			<iframe id="iframe-sidebar" style="height:100%; width:100%; border:none; margin: 0; padding: 0;" src="sidebar.html" onload="setButtonSel('about');"></iframe>
+		</div>
+	</body>
+</html>

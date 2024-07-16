@@ -1,0 +1,72 @@
+html, body {
+  /* Disable text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+	font-family: Trebuchet MS, Helvetica, sans-serif;
+	color: #DDD;
+  text-align: justify;
+}
+
+h1, h2, h3, h4, .text-area {
+  width: calc(100% - 10px);
+  padding: 0 5px;
+}
+
+h1, h2, h3, h4 {
+  font-variant: small-caps;
+  color: #DDF;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 0em;
+}
+
+h2.tos-h2 {
+  padding-left: 10%;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+b { color: #DDF; }
+
+a { text-decoration: none; }
+
+.text-area { vertical-align: middle;}
+:not(.sidebar-button-wrapper) > .text-area { margin-bottom: -0.25em; }
+
+.sidebar-button-wrapper > .text-area {
+  position: absolute;
+  text-align: right;
+  right: 50px;
+}
+
+.align-l { text-align: left; }
+.align-c { text-align: center; }
+.align-r { text-align: right; }
+.align-j { text-align: justify; }
+
+.hover-ul { text-decoration: inherit; }
+.hover-ul:hover { text-decoration: underline; }
