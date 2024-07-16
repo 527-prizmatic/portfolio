@@ -16,7 +16,7 @@ function load_gallery(_callback) {
       gallery_size++;
     });
 
-    $.getJSON("../media/wallpapers/wallpapers.json", function (data) {
+    $.getJSON("media/wallpapers/wallpapers.json", function (data) {
       bg_list.length = 0;
       $.each(data, function(key, val) {
         var url = "media/wallpapers/" + val;
