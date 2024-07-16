@@ -6,7 +6,7 @@ bg_list = [];
 
 // Attempts to load the gallery from the dedicated JSON file
 function load_gallery(_callback) {
-  $.getJSON("../media/gallery/gallery.json", function (data) {
+  $.getJSON("media/gallery/gallery.json", function (data) {
     gallery.length = 0;
     gallery_used.length = 0;
     gallery_size = 0;
