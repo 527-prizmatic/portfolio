@@ -1,15 +1,15 @@
 {
-  "I Beach Date": "i-beach-date.png",
-  "R Alby Ref": "r-alby.png",
-  "A ANA-ZERI": "a-14.png",
-  "A Asu Neo": "a-asu-neo.png",
-  "I Qadrya Cleanup": "i-qadrya-cleanup.png",
-  "A Chrona Arcadian": "a-chrona-arcadian.png",
-  "A Vega": "a-vega.png",
-  "E Full Pack": "e-pack.png",
-  "T Lysi Act II": "t-lysi-deuteron.png",
-  "A Lysi Act II": "a-lysi-deuteron.png",
-  "T Cynthia": "t-egg.png",
-  "A Kama Neo": "a-kama-neo.png",
-  "T Heart": "t-heart.png"
+  "i-beach-date.png": "Beach Date (2024)\nIllustration-type piece",
+  "r-alby.png": "Alby (2024)\nReference-type piece",
+  "a-14.png": "ANA-ZERI (2024)\nCharacter art-type piece",
+  "a-asu-neo.png": "Asuka (New) (2024)\nCharacter art-type piece",
+  "i-qadrya-cleanup.png": "Qadrya Cleanup (2024)\nIllustration-type piece",
+  "a-chrona-arcadian.png": "Chrona (Arcadian variant) (2024)\nCharacter art-type piece",
+  "a-vega.png": "Vega (2024)\nCharacter art-type piece",
+  "e-pack.png": "Some example emotes (2024)\nEmote-type piece",
+  "t-lysi-deuteron.png": "Lysithea (Bellatrix variant) (2024)\nIcon-type piece",
+  "a-lysi-deuteron.png": "Lysithea (Bellatrix variant) (2024)\nCharacter art-type piece",
+  "t-egg.png": "Cynthia (2023)\nIcon-type piece",
+  "a-kama-neo.png": "Kamara (2023)\nCharacter art-type piece",
+  "t-heart.png": "Heart (2022)\nIcon-type piece"
 }

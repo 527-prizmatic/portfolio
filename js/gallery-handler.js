@@ -1,4 +1,5 @@
 gallery = [];
+gallery_titles = [];
 gallery_size = 0;
 gallery_used = [];
 gallery_overlay_visible = false;
@@ -11,8 +12,9 @@ function load_gallery(_callback) {
     gallery_used.length = 0;
     gallery_size = 0;
     $.each(data, function(key, val) {
-      var url = "media/gallery/" + val;
+      var url = "media/gallery/" + key;
       gallery.push(url);
+	  gallery_titles.push(val);
       gallery_size++;
     });
 
@@ -41,7 +43,7 @@ function populate_gallery() {
   for (let i = 0; i < gallery_size; i++) {
     var img_next = fetch_next();
 //    img_next += "?t=" + (new Date().getTime());
-    document.getElementById("gallery-line-" + line).innerHTML += "<img class='img-field-gallery hover-brighten' onload='stretch_gallery();' src='" + img_next + "' onclick='gallery_overlay_fade_in(\"" + img_next + "\");'>";
+    document.getElementById("gallery-line-" + line).innerHTML += "<img class='img-field-gallery hover-brighten' onload='stretch_gallery();' src='" + img_next.url + "' title='" + img_next.title + "' onclick='gallery_overlay_fade_in(\"" + img_next.url + "\");'>";
     line = line == 1 ? 2 : 1;
   }
 }
@@ -144,7 +146,9 @@ function populate_img_fields_random() {
   var fields = document.getElementsByClassName("img-field-random");
   var style = "width: 100%; height: 100%;"
   for (let i = 0; i < fields.length; i++) {
-    fields[i].src = fetch_random();
+	var img = fetch_random();
+    fields[i].src = img.url;
+	fields[i].title = img.title;
     fields[i].setAttribute("style", style);
   }
 }
@@ -154,10 +158,10 @@ function fetch_next() {
   for (let i = 0; i < gallery_size; i++) {
     if (!gallery_used[i]) {
       gallery_used[i] = true;
-      return gallery[i];
+      return { "url": gallery[i], "title": gallery_titles[i] };
     }
   }
-  return "media/oops.png";
+  return { "url": "media/oops.png", "title": "An error occured loading this image" };
 }
 
 // Gets the URL to a random element of the gallery, returning a placeholder error if no images are available
@@ -168,7 +172,7 @@ function fetch_random() {
   for (let i = 0; i < gallery_size; i++) {
     if (gallery_used[i]) ctr++;
   }
-  if (ctr >= gallery_size) return "media/oops.png";
+  if (ctr >= gallery_size) return { "url": "media/oops.png", "title": "An error occured loading this image" };
 
   // Tries to get a random element of the gallery, trying again if its choice is already being unused
   // TODO Figure out a better system for this, probably by popping already-used elements
@@ -176,7 +180,7 @@ function fetch_random() {
     var r = Math.floor(Math.random() * gallery_size);
     if (!gallery_used[r]) {
       gallery_used[r] = true;
-      return gallery[r];
+      return { "url": gallery[r], "title": gallery_titles[r] };
     }
   }
 }
