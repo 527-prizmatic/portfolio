@@ -44,14 +44,6 @@ function populate_gallery() {
     var img_next = fetch_next();
 //    img_next += "?t=" + (new Date().getTime());
     var title = img_next.title;
-    var first = img_next.url[0];
-    switch (first) {
-      case 'a': title += "\nCharacter art-type piece"; break;
-      case 'e': title += "\nEmote-type piece"; break;
-      case 'i': title += "\nIllustration-type piece"; break;
-      case 'r': title += "\nReference-type piece"; break;
-      case 't': title += "\nIcon-type piece"; break;
-    }
 
     document.getElementById("gallery-line-" + line).innerHTML += "<img class='img-field-gallery hover-brighten' onload='stretch_gallery();' src='" + img_next.url + "' title='" + title + "' onclick='gallery_overlay_fade_in(\"" + img_next.url + "\");'>";
     line = line == 1 ? 2 : 1;
@@ -156,9 +148,9 @@ function populate_img_fields_random() {
   var fields = document.getElementsByClassName("img-field-random");
   var style = "width: 100%; height: 100%;"
   for (let i = 0; i < fields.length; i++) {
-	var img = fetch_random();
+  	var img = fetch_random();
     fields[i].src = img.url;
-	fields[i].title = img.title;
+    fields[i].title = img.title;
     fields[i].setAttribute("style", style);
   }
 }
