@@ -44,13 +44,13 @@ function populate_gallery() {
     var img_next = fetch_next();
 //    img_next += "?t=" + (new Date().getTime());
     var title = img_next.title;
-    var first = img_next.url[0];
+    var first = Array.from(img_next.url)[0];
     switch (first) {
-      case 'a': title += "\nCharacter art-type piece"; break;
-      case 'e': title += "\nEmote-type piece"; break;
-      case 'i': title += "\nIllustration-type piece"; break;
-      case 'r': title += "\nReference-type piece"; break;
-      case 't': title += "\nIcon-type piece"; break;
+      case 'a': title.concat("\nCharacter art-type piece"); break;
+      case 'e': title.concat("\nEmote-type piece"); break;
+      case 'i': title.concat("\nIllustration-type piece"); break;
+      case 'r': title.concat("\nReference-type piece"); break;
+      case 't': title.concat("\nIcon-type piece"); break;
     }
 
     document.getElementById("gallery-line-" + line).innerHTML += "<img class='img-field-gallery hover-brighten' onload='stretch_gallery();' src='" + img_next.url + "' title='" + title + "' onclick='gallery_overlay_fade_in(\"" + img_next.url + "\");'>";
