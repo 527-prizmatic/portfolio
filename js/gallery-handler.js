@@ -111,6 +111,20 @@ function gallery_overlay_fade_in(img_id) {
 function gallery_overlay_change(img_id) {
   var img = document.getElementById("gallery-overlay-img");
   img.src = img_id;
+
+  var title = document.getElementById("gallery-title");
+  var text = gallery_titles[gallery.indexOf(img_id)] + "<br/>";
+
+  var first = Array.from(img_id)[14];
+  switch (first) {
+    case 'a': text = text.concat("Character art-type piece"); break;
+    case 'e': text = text.concat("Emote-type piece"); break;
+    case 'i': text = text.concat("Illustration-type piece"); break;
+    case 'r': text = text.concat("Reference-type piece"); break;
+    case 't': text = text.concat("Icon-type piece"); break;
+  }
+
+  title.innerHTML = text;
 }
 
 function gallery_overlay_change_prev() {
