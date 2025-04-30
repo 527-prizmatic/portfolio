@@ -1,4 +1,4 @@
-galleryFolder = "media/gallery-ns/";
+galleryFolder = "media/gallery/";
 gallery = [];
 galleryTitles = [];
 gallerySize = 0;
@@ -43,7 +43,6 @@ function populate_gallery() {
 
   for (let i = 0; i < gallerySize; i++) {
     var img_next = fetch_next();
-//    img_next += "?t=" + (new Date().getTime());
     var title = img_next.title;
     var first = Array.from(img_next.url)[14];
     switch (first) {
