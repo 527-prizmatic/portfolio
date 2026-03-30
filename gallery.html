@@ -60,6 +60,15 @@
 					}
 					keyPressed = true;
 				});
+				
+				wheelScroll = false;
+				document.body.addEventListener("wheel", (e) => {
+					if (!wheelScroll) {
+						if (e.deltaY < -0.5) gallery_overlay_change_prev();
+						else if (e.deltaY > 0.5) gallery_overlay_change_next();
+					}
+					console.log(e.deltaY);
+				});
 
 				document.body.addEventListener("keyup", (e) => { keyPressed = false; });
 			</script>

@@ -13,8 +13,8 @@ function load_gallery(_callback) {
     galleryUsed.length = 0;
     gallerySize = 0;
     $.each(data, function(key, val) {
-      var url = galleryFolder + key;
-      gallery.push(url);
+      var uri = galleryFolder + key + ".png";
+      gallery.push(uri);
 	  galleryTitles.push(val);
       gallerySize++;
     });
@@ -22,8 +22,8 @@ function load_gallery(_callback) {
     $.getJSON("media/wallpapers/wallpapers.json", function (data) {
       bgList.length = 0;
       $.each(data, function(key, val) {
-        var url = "media/wallpapers/" + val;
-        bgList.push(url);
+        var uri = "media/wallpapers/" + val;
+        bgList.push(uri);
       });
 
       load_bg_random();
@@ -51,6 +51,7 @@ function populate_gallery() {
       case 'i': title = title.concat("\nIllustration-type piece"); break;
       case 'r': title = title.concat("\nReference-type piece"); break;
       case 't': title = title.concat("\nIcon-type piece"); break;
+      case 'm': title = title.concat("\nMiniature-type piece"); break;
     }
 
     document.getElementById("gallery-line-" + line).innerHTML += "<img class='img-field-gallery hover-brighten' onload='stretch_gallery();' src='" + img_next.url + "' title='" + title + "' onclick='gallery_overlay_fade_in(\"" + img_next.url + "\");'>";
@@ -122,6 +123,7 @@ function gallery_overlay_change(img_id) {
     case 'i': text = text.concat("Illustration-type piece"); break;
     case 'r': text = text.concat("Reference-type piece"); break;
     case 't': text = text.concat("Icon-type piece"); break;
+	case 'm': text = text.concat("\nMiniature-type piece"); break;
   }
 
   title.innerHTML = text;
